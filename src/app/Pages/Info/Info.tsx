@@ -11,22 +11,34 @@ export const Info = () => {
 
   return (
     <div className="bg-transparent h-screen flex flex-col items-center justify-around">
-      <div>Monhanha</div>
-      <Image
-        src="/info.png"
-        width={100}
-        height={100}
-        style={{ width: "70%", height: "auto" }}
-        alt="moana"
-        className="select-none max-w-md"
-      />
-      <div className="h-1/6">
-        <div
-          className="bg-orange-800 cursor-pointer p-2 rounded-xl text-center text-white uppercase"
-          onClick={navigateBack}
-        >
-          Voltar
-        </div>
+      <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
+        <Image
+          src="/praia.jpg"
+          width={100}
+          height={100}
+          style={{ width: "auto", height: "100%" }}
+          alt="moana"
+          className="select-none overflow-hidden"
+        />
+      </div>
+
+      <div className="flex flex-col w-screen h-fit items-center justify-center ">
+        <Image
+          src="/PERSONAGENS2.png"
+          width={100}
+          height={100}
+          style={{ width: "70%", height: "auto" }}
+          alt="moana"
+          className="select-none max-w-md"
+        />
+        <Image
+          src="/TAMANHOS.png"
+          width={100}
+          height={100}
+          style={{ width: "70%", height: "auto" }}
+          alt="moana"
+          className="select-none max-w-md"
+        />
       </div>
     </div>
   );

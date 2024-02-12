@@ -21,7 +21,7 @@ export const SaveTheDate = () => {
   };
 
   return (
-    <div className="bg-transparent h-screen flex flex-col items-center justify-between">
+    <div className="bg-transparent h-screen flex flex-col items-center justify-start">
       <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
         <Image
           src="/praia.jpg"
@@ -32,23 +32,16 @@ export const SaveTheDate = () => {
           className="select-none overflow-hidden"
         />
       </div>
-      <Image
-        src="/head2.png"
-        width={100}
-        height={100}
-        style={{ width: "100%" }}
-        alt="moana"
-        className="select-none "
-      />
+
       <Image
         src="/horario.png"
         width={100}
         height={100}
         style={{ width: "70%", height: "auto" }}
         alt="moana"
-        className="select-none max-w-md"
+        className="select-none mt-8"
       />
-      <div className="h-1/6  flex flex-row justify-around mb-12">
+      <div className="h-1/6  flex flex-row justify-around">
         <Button
           text="Confirmar presença"
           scr="/whatsapp-icon.svg"
@@ -59,6 +52,16 @@ export const SaveTheDate = () => {
           text="Sugestões de presente"
           scr="/gift.svg"
           action={navigateToInfo}
+        />
+      </div>
+      <div className="h-fit w-screen md:w-1/4 flex flex-row justify-between absolute bottom-0 start-0 -z-10">
+        <Image
+          src="/moana2.png"
+          width={100}
+          height={100}
+          style={{ width: "100%", height: "auto" }}
+          alt="moana"
+          className="select-none flex-1"
         />
       </div>
     </div>
