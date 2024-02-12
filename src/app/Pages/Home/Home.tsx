@@ -58,7 +58,7 @@ export const Home = () => {
               Faz 2 Anos
             </div>
             <div
-              className="bg-[#613613] hover:bg-[#613613]/80 max-w-48 cursor-pointer py-2 my-4 w-1/2 self-center p-2 rounded-xl text-center text-white font-light text-xl shadow-[4px_10px_10px_0px_#00000010] shadow-black/40"
+              className="bg-[#613613] hover:bg-[#613613]/80 select-none max-w-48 cursor-pointer py-2 my-4 w-1/2 self-center p-2 rounded-xl text-center text-white font-light text-xl shadow-[4px_10px_10px_0px_#00000010] shadow-black/40"
               onClick={navigateToSaveTheDate}
             >
               Vem ver
