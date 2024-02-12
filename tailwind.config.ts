@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -7,10 +8,8 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        background_image: "url('/oceano2.jpg')",
-      },
+    fontFamily: {
+      sans: ["Fredoka", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],
