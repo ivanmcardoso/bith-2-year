@@ -21,48 +21,70 @@ export const SaveTheDate = () => {
   };
 
   return (
-    <div className="bg-transparent h-screen flex flex-col items-center justify-start">
+    <div className="bg-transparent h-screen flex flex-col items-center justify-between">
       <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
         <Image
           src="/praia.jpg"
           width={100}
           height={100}
-          style={{ width: "auto", height: "100%" }}
+          priority={true}
+          style={{ width: "100%", height: "100%" }}
           alt="moana"
-          className="select-none overflow-hidden"
+          className="select-none overflow-hidden object-cover"
         />
       </div>
-
       <Image
-        src="/horario.png"
+        src="/sol.gif"
         width={100}
         height={100}
-        style={{ width: "70%", height: "auto" }}
+        style={{ width: "auto", height: "120px" }}
         alt="moana"
-        className="select-none mt-8"
+        className="select-none my-4"
       />
-      <div className="h-1/6  flex flex-row justify-around">
-        <Button
-          text="Confirmar presença"
-          scr="/whatsapp-icon.svg"
-          action={navigateToConfirm}
-        />
-        <Button text="Localização" scr="/map.svg" action={navigateToLocation} />
-        <Button
-          text="Sugestões de presente"
-          scr="/gift.svg"
-          action={navigateToInfo}
-        />
-      </div>
-      <div className="h-fit w-screen md:w-1/4 flex flex-row justify-between absolute bottom-0 start-0 -z-10">
+      <div className="w-screen flex flex-col items-center">
+        <div className="text-center text-cyan-900 text-3xl font-bold mb-3">
+          Embarque Comigo!
+        </div>
         <Image
-          src="/moana2.png"
+          src="/horarios.png"
           width={100}
           height={100}
-          style={{ width: "100%", height: "auto" }}
+          priority={true}
+          style={{ width: "80%", height: "auto" }}
           alt="moana"
-          className="select-none flex-1"
+          className="select-none "
         />
+      </div>
+      <div className="h-1/3 flex flex-row items-end ">
+        <Image
+          src="/baby2.png"
+          width={100}
+          height={100}
+          priority={true}
+          style={{
+            width: "auto",
+            height: "80%",
+            maxHeight: "350px",
+          }}
+          alt="moana"
+          className="select-none w-1/3 flex-1"
+        />
+        <div className="h-full w-2/3 flex  flex-col items-center justify-end px-4 mb-2 ">
+          <div className="w-full flex flex-row justify-around">
+            <Button
+              text="Localização"
+              scr="/map.svg"
+              action={navigateToLocation}
+            />
+            <Button text="Sugestões" scr="/gift.svg" action={navigateToInfo} />
+          </div>
+          <div
+            className="bg-orange-800 font-medium hover:bg-orange-800/80 select-none w-full cursor-pointer py-2 my-4  self-center px-4 rounded-xl text-center text-white text-sm shadow-[4px_10px_10px_0px_#00000010] shadow-black/40"
+            onClick={navigateToConfirm}
+          >
+            Confirmar Presença
+          </div>
+        </div>
       </div>
     </div>
   );

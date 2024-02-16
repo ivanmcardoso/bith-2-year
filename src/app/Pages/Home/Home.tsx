@@ -2,28 +2,39 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export const Home = () => {
   const router = useRouter();
+  const [isRendered, setIsRendered] = useState(false);
+
+  let img = (
+    <Image
+      src="/praia.jpg"
+      width={100}
+      height={100}
+      priority={true}
+      onLoad={() => {
+        setIsRendered(true);
+      }}
+      style={{ width: "100%", height: "100%" }}
+      alt="moana"
+      className="select-none overflow-hidden object-cover"
+    />
+  );
 
   const navigateToSaveTheDate = () => {
+    console.log("SaveTheDate");
     router.push("SaveTheDate");
   };
 
   return (
     <div className="bg-transparent h-screen flex flex-col justify-between overflow-hidden">
-      <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
-        <Image
-          src="/praia.jpg"
-          width={100}
-          height={100}
-          style={{ width: "auto", height: "100%" }}
-          alt="moana"
-          className="select-none overflow-hidden"
-        />
+      <div className="h-screen w-screen lg:h-0 visible lg:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
+        {img}
       </div>
       <div className="flex h-screen flex-col items-center justify-around ">
-        <div className="w-2/3 text-center text-cyan-900 text-4xl font-bold">
+        <div className="w-2/3 text-center text-cyan-900 text-2xl font-bold">
           <motion.div
             initial={{ scale: 1, x: -50, opacity: 0 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -50,6 +61,7 @@ export const Home = () => {
               src="/MARIACECILIA.png"
               width={100}
               height={100}
+              priority={true}
               style={{ width: "100%", height: "auto" }}
               alt="moana"
               className="select-none max-w-md"
@@ -78,6 +90,7 @@ export const Home = () => {
             src="/baby1.png"
             width={100}
             height={100}
+            priority={true}
             style={{
               width: "auto",
               height: "100%",
@@ -90,7 +103,7 @@ export const Home = () => {
         </motion.div>
       </div>
 
-      <div className=" w-screen flex flex-col items-center justify-center"></div>
+      <div className="max-h-48 w-screen flex flex-col items-center justify-center"></div>
     </div>
   );
 };
