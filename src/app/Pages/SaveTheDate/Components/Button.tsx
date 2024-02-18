@@ -20,7 +20,9 @@ export default function Button(props: {
           className="select-none max-w-md"
         />
       </div>
-      <div className="text-center text-orange-800 my-2"> {props.text}</div>
+      <div className="text-center text-orange-800 my-2 select-none">
+        {props.text}
+      </div>
     </div>
   );
 }

@@ -28,13 +28,22 @@ export const Home = () => {
     router.push("SaveTheDate");
   };
 
+  if (!isRendered) {
+    return (
+      <div className="text-center text-cyan-900 text-2xl font-bold my-20">
+        Aguarde...
+        <div className="invisible">{img}</div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-transparent h-screen flex flex-col justify-between overflow-hidden">
       <div className="h-screen w-screen lg:h-0 visible lg:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
         {img}
       </div>
       <div className="flex h-screen flex-col items-center justify-around ">
-        <div className="w-2/3 text-center text-cyan-900 text-2xl font-bold">
+        <div className="w-2/3 text-center text-cyan-900 text-2xl font-bold select-none">
           <motion.div
             initial={{ scale: 1, x: -50, opacity: 0 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -66,7 +75,7 @@ export const Home = () => {
               alt="moana"
               className="select-none max-w-md"
             />
-            <div className="text-center text-cyan-900  text-4xl font-semibold pt-4">
+            <div className="text-center text-cyan-900  text-4xl font-semibold pt-4 select-none">
               Faz 2 Anos
             </div>
             <div

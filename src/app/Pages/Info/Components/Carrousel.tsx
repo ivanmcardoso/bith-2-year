@@ -39,7 +39,7 @@ export default function Carousel(props: { items: string[]; names: string[] }) {
               alt="Application Logo"
               className="select-none my-4"
             />
-            <div className="text-cyan-900 text-xl font-bold">
+            <div className="text-cyan-900 text-xl font-bold select-none">
               {names[index]}
             </div>
           </div>

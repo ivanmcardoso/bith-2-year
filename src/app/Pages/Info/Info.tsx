@@ -2,9 +2,36 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Carousel from "./Components/Carrousel";
+import { useState } from "react";
 
 export const Info = () => {
   const router = useRouter();
+
+  const [isRendered, setIsRendered] = useState(false);
+
+  let img = (
+    <Image
+      src="/praia.jpg"
+      width={100}
+      height={100}
+      priority={true}
+      onLoad={() => {
+        setIsRendered(true);
+      }}
+      style={{ width: "100%", height: "100%" }}
+      alt="moana"
+      className="select-none overflow-hidden object-cover"
+    />
+  );
+
+  if (!isRendered) {
+    return (
+      <div className="text-center text-cyan-900 text-2xl font-bold my-20">
+        Aguarde...
+        <div className="invisible">{img}</div>
+      </div>
+    );
+  }
 
   const navigateBack = () => {
     router.back();
@@ -22,14 +49,7 @@ export const Info = () => {
   return (
     <div className="bg-transparent h-screen flex flex-col items-center justify-around">
       <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
-        <Image
-          src="/praia.jpg"
-          width={100}
-          height={100}
-          style={{ width: "auto", height: "100%" }}
-          alt="moana"
-          className="select-none overflow-hidden"
-        />
+        {img}
       </div>
 
       <div className="flex flex-col w-screen h-fit items-center justify-center ">

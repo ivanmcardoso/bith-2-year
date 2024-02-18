@@ -2,9 +2,36 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Button from "./Components/Button";
+import { useState } from "react";
 
 export const SaveTheDate = () => {
   const router = useRouter();
+
+  const [isRendered, setIsRendered] = useState(false);
+
+  let img = (
+    <Image
+      src="/praia.jpg"
+      width={100}
+      height={100}
+      priority={true}
+      onLoad={() => {
+        setIsRendered(true);
+      }}
+      style={{ width: "100%", height: "100%" }}
+      alt="moana"
+      className="select-none overflow-hidden object-cover"
+    />
+  );
+
+  if (!isRendered) {
+    return (
+      <div className="text-center text-cyan-900 text-2xl font-bold my-20">
+        Aguarde...
+        <div className="invisible">{img}</div>
+      </div>
+    );
+  }
 
   const navigateToInfo = () => {
     router.push("Info");
@@ -23,15 +50,7 @@ export const SaveTheDate = () => {
   return (
     <div className="bg-transparent h-screen flex flex-col items-center justify-between">
       <div className="h-screen md:h-0 visible md:invisible -z-10 absolute flex flex-row items-center justify-center overflow-clip">
-        <Image
-          src="/praia.jpg"
-          width={100}
-          height={100}
-          priority={true}
-          style={{ width: "100%", height: "100%" }}
-          alt="moana"
-          className="select-none overflow-hidden object-cover"
-        />
+        {img}
       </div>
       <Image
         src="/sol.gif"
