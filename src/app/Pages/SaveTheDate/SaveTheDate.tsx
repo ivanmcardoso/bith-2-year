@@ -55,7 +55,7 @@ export const SaveTheDate = () => {
           className="select-none "
         />
       </div>
-      <div className="h-1/3 flex flex-row items-end ">
+      <div className="h-1/3 flex flex-row items-end">
         <Image
           src="/baby2.png"
           width={100}
@@ -69,7 +69,7 @@ export const SaveTheDate = () => {
           alt="moana"
           className="select-none w-1/3 flex-1"
         />
-        <div className="h-full w-2/3 flex  flex-col items-center justify-end px-4 mb-2 ">
+        <div className="h-full w-2/3 flex  flex-col items-center justify-center px-4 mb-2 ">
           <div className="w-full flex flex-row justify-around">
             <Button
               text="Localização"
