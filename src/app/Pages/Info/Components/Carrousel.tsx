@@ -7,6 +7,9 @@ export default function Carousel(props: { items: string[]; names: string[] }) {
 
   return (
     <div>
+      <div className="w-full px-6 text-cyan-900 text-2xl font-bold select-none">
+        Meus personagens favoritos são:
+      </div>
       <RCarousel
         interval={3000}
         showArrows

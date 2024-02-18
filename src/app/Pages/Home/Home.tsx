@@ -23,6 +23,35 @@ export const Home = () => {
     />
   );
 
+  let maria = (
+    <Image
+      src="/MARIACECILIA.png"
+      width={100}
+      height={100}
+      priority={true}
+      style={{ width: "100%", height: "auto" }}
+      alt="moana"
+      className="select-none max-w-md"
+    />
+  );
+
+  let moaninha = (
+    <Image
+      src="/baby1.png"
+      width={100}
+      height={100}
+      priority={true}
+      style={{
+        width: "auto",
+        height: "100%",
+        maxHeight: "350px",
+        minWidth: "250px",
+      }}
+      alt="moana"
+      className="select-none pt-2 align-middle "
+    />
+  );
+
   const navigateToSaveTheDate = () => {
     console.log("SaveTheDate");
     router.push("SaveTheDate");
@@ -66,15 +95,7 @@ export const Home = () => {
           className="w-full flex flex-col items-center"
         >
           <div className="w-3/4 pt-4 flex flex-col items-center">
-            <Image
-              src="/MARIACECILIA.png"
-              width={100}
-              height={100}
-              priority={true}
-              style={{ width: "100%", height: "auto" }}
-              alt="moana"
-              className="select-none max-w-md"
-            />
+            {maria}
             <div className="text-center text-cyan-900  text-4xl font-semibold pt-4 select-none">
               Faz 2 Anos
             </div>
@@ -95,20 +116,7 @@ export const Home = () => {
             delay: 1,
           }}
         >
-          <Image
-            src="/baby1.png"
-            width={100}
-            height={100}
-            priority={true}
-            style={{
-              width: "auto",
-              height: "100%",
-              maxHeight: "350px",
-              minWidth: "250px",
-            }}
-            alt="moana"
-            className="select-none pt-2 align-middle "
-          />
+          {moaninha}
         </motion.div>
       </div>
 
